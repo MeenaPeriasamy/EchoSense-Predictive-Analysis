@@ -1,6 +1,6 @@
 # EchoSense-Predictive-Analytics
 
-An innovative AI-powered system designed to analyze ECG data and predict cardiac conditions. This project leverages supervised machine learning to classify heart conditions and provide insights for early cardiac risk assessment using the annotated CODE-15% dataset.
+An innovative Artificial Intelligence - powered system designed to analyze ECG data and predict cardiac conditions. This project leverages supervised machine learning to classify heart conditions and provide insights for early cardiac risk assessment using the annotated CODE-15% dataset.
 
 ## Features
 - **Intelligent ECG Analysis**: Harnesses supervised learning for detailed cardiac condition classification.
@@ -42,6 +42,6 @@ This project utilizes the **CODE-15% dataset**, a large-scale, annotated dataset
 
 3. Download the dataset:
 
-    Visit CODE-15% Dataset on Zenodo to download the ECG data.
+    Visit CODE-15% Dataset on Zenodo to download the ECG data.(Link : https://zenodo.org/record/4916206)
    
     Place the downloaded files into the data/ directory.
