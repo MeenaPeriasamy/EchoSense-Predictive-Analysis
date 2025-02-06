@@ -1,47 +1,33 @@
-# EchoSense-Predictive-Analytics
+# EchoSense: Predictive Analysis of Cardiac Health
 
-An innovative Artificial Intelligence - powered system designed to analyze ECG data and predict cardiac conditions. This project leverages supervised machine learning to classify heart conditions and provide insights for early cardiac risk assessment using the annotated CODE-15% dataset.
+## Project Overview
+EchoSense is an advanced predictive healthcare application designed to analyze electrocardiogram (ECG) images for potential cardiac issues. By utilizing deep learning models, EchoSense can predict the likelihood of various cardiac conditions, providing crucial insights into cardiac health.
 
 ## Features
-- **Intelligent ECG Analysis**: Harnesses supervised learning for detailed cardiac condition classification.
-- **Predictive Risk Assessment**: Provides early predictions to assist in proactive health monitoring.
-- **Scalable and Robust**: Built for handling large datasets like CODE-15%, ensuring reliability and flexibility.
-- **Modern AI Framework**: Employs advanced preprocessing, feature engineering, and model optimization techniques.
+- **ECG Image Analysis:** Upload ECG images and receive instant analysis and predictions.
+- **Health Risk Prediction:** Identifies potential cardiac risks like myocardial infarction, abnormal heartbeats, and previous myocardial damage.
+- **Detailed Health Insights:** Provides detailed descriptions of identified conditions, helping in early diagnosis and management.
 
+## Technologies Used
+- Python
+- TensorFlow/Keras
+- OpenCV
+- Tkinter for GUI
 
-
-## Dataset
-This project utilizes the **CODE-15% dataset**, a large-scale, annotated dataset containing:
-- **345,779 ECG exams** from **233,770 patients**.
-- Labeled cardiac conditions for machine learning tasks.
-
-**Dataset Source**: [Zenodo - CODE-15%](https://zenodo.org/record/4916206)
-
-
-## Project Organization
-
-
----
+## How It Works
+1. Upload an ECG image using the intuitive GUI.
+2. The model analyzes the image and predicts potential cardiac conditions.
+3. The application displays the main category of heart condition and a detailed breakdown of possible sub-conditions and their implications.
 
 ## Getting Started
+To run EchoSense locally:
+1. Clone this repository.
+2. Install the required dependencies: `pip install -r requirements.txt`.
+3. Run the application: `python echosense_app.py`.
 
-### Prerequisites
-- Python 3.8 or later
-- Recommended: Anaconda or a virtual environment
+## Contributions
+Contributions are welcome! Please read the contribution guidelines for more information.
 
-### Setup Instructions
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/EchoSense-Predictive-Analytics.git
-   cd EchoSense-Predictive-Analytics
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-2. Install the necessary dependencies:
-```bash
-   pip install -r requirements.txt
-```
-
-3. Download the dataset:
-
-    Visit CODE-15% Dataset on Zenodo to download the ECG data.(Link : https://zenodo.org/record/4916206)
-   
-    Place the downloaded files into the data/ directory.
