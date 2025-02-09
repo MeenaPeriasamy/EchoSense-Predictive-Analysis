@@ -1,63 +1,88 @@
 # EchoSense: Predictive Analysis of Cardiac Health
 
-## Project Overview
-EchoSense is a project focused on leveraging machine learning to classify electrocardiogram (ECG) images into various categories indicative of heart conditions. The project is implemented in two distinct approaches: locally using Jupyter Notebook and on the cloud via Google Cloud Platform (GCP) with Vertex AI.
+## Overview
+Predictive Healthcare Analysis is an AI-driven system designed for ECG image classification using **EfficientNetB4** and **CNN models**. The project applies **deep learning** techniques to classify ECG images into different medical categories and provides a GUI for real-time predictions.
 
-## Approach 1: Local Analysis using Jupyter Notebook
+## Project Structure
 
-### Description
-This approach involves using Python and libraries such as TensorFlow, Keras, and PIL in a Jupyter Notebook environment to process and classify ECG images. The local environment allows for detailed and iterative development, suitable for experiments and prototype development.
+```
+Predictive-Healthcare-Analysis/
+│── data_preprocessing.py       # Data augmentation & preprocessing
+│── train_efficientnet.py       # EfficientNetB4-based ECG classifier
+│── cnn_model.py                # Custom CNN model for ECG classification
+│── ecg_image_loader.py         # Image loading & preprocessing
+│── ecg_gui.py                  # GUI for ECG classification
+│── ecg_model.h5                # Trained deep learning model
+│── requirements.txt            # Dependencies
+│── README.md                   # Project documentation
+```
 
-### Requirements
-- Python 3.8+
-- Jupyter Notebook
-- TensorFlow
-- Keras
-- NumPy
-- PIL (Pillow)
+## Model Architecture
+### **1. EfficientNetB4-based Model (`train_efficientnet.py`):**
+- Uses **EfficientNetB4** as the backbone.
+- Applies **Global Average Pooling (GAP)** instead of Flatten for better generalization.
+- Includes **batch normalization & dropout** for regularization.
+- Fine-tunes **30% of base model layers** for performance improvement.
 
-### Setup and Execution
-1. **Setup Python Environment**:
-   - Ensure Python and pip are installed.
-   - Install dependencies: `pip install notebook tensorflow keras numpy pillow`.
+### **2. Custom CNN Model (`cnn_model.py`):**
+- Uses **Conv2D, MaxPooling, Flatten, Dense, Dropout** layers.
+- Trained on ECG image dataset with **4 categories**.
 
-2. **Running the Notebook**:
-   - Launch Jupyter Notebook: `jupyter notebook`.
-   - Open the `EchoSense_Analysis.ipynb` file.
-   - Execute the cells sequentially to preprocess data, train models, and evaluate results.
+### **3. Data Augmentation (`data_preprocessing.py`):**
+- Uses **ImageDataGenerator** for on-the-fly augmentation.
+- Performs **rotation, shifting, zooming, flipping, brightness adjustment**, etc.
 
-### Data Structure
-- Data should be organized in directories under `data/`, categorized by conditions such as `Normal`, `Abnormal Heartbeat`, etc.
+### **4. Graphical User Interface (`ecg_gui.py`):**
+- A **Tkinter-based GUI** for ECG classification.
+- Allows users to **upload an ECG image** and receive a **predicted diagnosis**.
 
-## Approach 2: Cloud Analysis using Google Cloud Platform (GCP) and Vertex AI
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/Predictive-Healthcare-Analysis.git
+   cd Predictive-Healthcare-Analysis
+   ```
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-### Description
-Using GCP's Vertex AI, this approach leverages the power of cloud computing to handle larger datasets and more complex models with ease. It allows for scalable model training, deployment, and management.
+## Usage
+### **1. Train the Model**
+   ```sh
+   python train_efficientnet.py  # Train EfficientNetB4 model
+   python cnn_model.py           # Train custom CNN model
+   ```
+### **2. Run the GUI for ECG Image Classification**
+   ```sh
+   python ecg_gui.py
+   ```
 
-### Requirements
-- Google Cloud account
-- Setup GCP project and enable Vertex AI API
-- Access to Google Cloud Storage
+## Dataset
+- The dataset consists of **ECG images categorized into 4 classes**.
+- Ensure your dataset is structured as follows:
+  ```
+  ECG Data/
+  ├── Abnormal Heartbeat Patients/
+  ├── Myocardial Infarction Patients/
+  ├── Normal Person/
+  ├── History of Myocardial Infarction/
+  ```
 
-### Setup and Execution
-1. **Data Upload**:
-   - Upload your dataset to Google Cloud Storage in the appropriate bucket.
+## GAP Method in Model Architecture
+The **Global Average Pooling (GAP)** layer is used instead of a **Flatten layer** because:
+- It **reduces overfitting** by reducing the number of trainable parameters.
+- It acts as a **structural regularizer**, improving generalization.
+- GAP extracts **global spatial information** from feature maps.
 
-2. **Creating Dataset in Vertex AI**:
-   - Navigate to Vertex AI in the Google Cloud Console.
-   - Create a new dataset and import images from the storage bucket.
+## Future Improvements
+- Expand dataset with more ECG images.
+- Improve model accuracy with **hyperparameter tuning**.
+- Implement **explainable AI (XAI)** techniques for medical transparency.
 
-3. **Training the Model**:
-   - Configure and start training using AutoML or custom training options based on the dataset.
-   - Monitor training progress in Vertex AI.
+## Contributors
+- **Meena Periasamy** (Northeastern University, M.S. Data Analytics)
 
-4. **Model Evaluation and Deployment**:
-   - Evaluate the trained model using Vertex AI's evaluation metrics.
-   - Deploy the model for online or batch predictions.
+## License
+This project is licensed under the MIT License.
 
-### Monitoring and Management
-- Use Vertex AI's dashboard to manage models and check their performance metrics.
-- Deploy models and make them accessible through Google's endpoints for applications.
-
-## Conclusion
-EchoSense provides two robust methodologies for ECG image analysis, tailored for different environments and scales, from local development to comprehensive cloud-based solutions.
