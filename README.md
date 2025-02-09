@@ -39,7 +39,7 @@ Predictive-Healthcare-Analysis/
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/Predictive-Healthcare-Analysis.git
+   git clone https://github.com/MeenaPeriasamy/EchoSense-Predictive-Analysis-
    cd Predictive-Healthcare-Analysis
    ```
 2. Install dependencies:
