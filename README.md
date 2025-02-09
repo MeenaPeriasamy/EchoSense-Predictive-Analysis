@@ -10,7 +10,6 @@ Predictive-Healthcare-Analysis/
 │── data_preprocessing.py       # Data augmentation & preprocessing
 │── train_efficientnet.py       # EfficientNetB4-based ECG classifier
 │── cnn_model.py                # Custom CNN model for ECG classification
-│── ecg_image_loader.py         # Image loading & preprocessing
 │── ecg_gui.py                  # GUI for ECG classification
 │── ecg_model.h5                # Trained deep learning model
 │── requirements.txt            # Dependencies
