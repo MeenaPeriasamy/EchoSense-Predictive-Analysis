@@ -80,7 +80,8 @@ The **Global Average Pooling (GAP)** layer is used instead of a **Flatten layer*
 - Implement **explainable AI (XAI)** techniques for medical transparency.
 
 ## Contributors
-- **Meena Periasamy** (Northeastern University, M.S. Data Analytics)
+- **Meena Periasamy** (Northeastern University Master of Science in Data Analytics)
+- **Gnanasudharsan Ashokumar** (Northeastern University Master of Science in Data Analytics)
 
 ## License
 This project is licensed under the MIT License.
